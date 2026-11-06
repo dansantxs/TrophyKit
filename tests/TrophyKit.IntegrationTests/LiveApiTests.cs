@@ -38,7 +38,17 @@ public class LiveApiTests
             ? PsnClient.Me
             : (await psn.GetProfileByOnlineIdAsync(publicOnlineId, Ct)).AccountId;
 
-        var summary = await psn.GetTrophySummaryAsync(accountId, Ct);
+        PsnTrophySummary summary;
+        try
+        {
+            summary = await psn.GetTrophySummaryAsync(accountId, Ct);
+        }
+        catch (TrophyKitAccessDeniedException)
+        {
+            Assert.Skip($"The trophies of '{publicOnlineId}' are not public. Use a profile whose trophy privacy is set to 'Anyone'.");
+            throw;
+        }
+
         Assert.InRange(summary.TrophyLevel, 1, 999);
 
         var page = await psn.GetTrophyTitlesAsync(accountId, limit: 5, cancellationToken: Ct);
