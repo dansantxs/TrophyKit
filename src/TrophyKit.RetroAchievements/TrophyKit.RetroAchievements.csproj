@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <RootNamespace>TrophyKit.RetroAchievements</RootNamespace>
+    <Description>RetroAchievements Web API client for .NET: user profiles, completion progress, game progress with achievements and awards, with rate limiting and retries. Community project, not affiliated with RetroAchievements.org.</Description>
+    <PackageTags>$(PackageTags);retro;emulation</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../TrophyKit.Core/TrophyKit.Core.csproj" />
+  </ItemGroup>
+
+</Project>

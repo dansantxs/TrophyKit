@@ -1,0 +1,52 @@
+{
+  "ID": 1,
+  "Title": "Sonic the Hedgehog",
+  "ConsoleID": 1,
+  "ForumTopicID": 112,
+  "ImageIcon": "/Images/085573.png",
+  "Publisher": "Sega",
+  "Developer": "Sonic Team",
+  "Genre": "Platforming",
+  "Released": "1991-06-23",
+  "ConsoleName": "Genesis/Mega Drive",
+  "NumAchievements": 2,
+  "NumDistinctPlayers": 27080,
+  "Achievements": {
+    "9": {
+      "ID": 9,
+      "NumAwarded": 24273,
+      "NumAwardedHardcore": 10933,
+      "Title": "Speed Demon",
+      "Description": "Complete the first act in under 30 seconds",
+      "Points": 10,
+      "TrueRatio": 31,
+      "Author": "Scott",
+      "DateModified": "2023-08-08 00:36:59",
+      "DateCreated": "2012-11-02 00:03:12",
+      "BadgeName": "250336",
+      "DisplayOrder": 2,
+      "MemAddr": "x",
+      "type": "progression"
+    },
+    "4": {
+      "ID": 4,
+      "NumAwarded": 25000,
+      "NumAwardedHardcore": 11000,
+      "Title": "Ring Collector",
+      "Description": "Collect 100 rings",
+      "Points": 5,
+      "TrueRatio": 7,
+      "BadgeName": "250333",
+      "DisplayOrder": 1,
+      "type": null,
+      "DateEarned": "2026-10-20 10:00:00",
+      "DateEarnedHardcore": "2026-10-20 10:00:00"
+    }
+  },
+  "NumAwardedToUser": 1,
+  "NumAwardedToUserHardcore": 1,
+  "UserCompletion": "50.00%",
+  "UserCompletionHardcore": "50.00%",
+  "HighestAwardKind": null,
+  "HighestAwardDate": null
+}

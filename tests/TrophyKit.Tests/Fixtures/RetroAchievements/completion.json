@@ -1,0 +1,32 @@
+{
+  "Count": 2,
+  "Total": 2,
+  "Results": [
+    {
+      "GameID": 1,
+      "Title": "Sonic the Hedgehog",
+      "ImageIcon": "/Images/085573.png",
+      "ConsoleID": 1,
+      "ConsoleName": "Genesis/Mega Drive",
+      "MaxPossible": 23,
+      "NumAwarded": 23,
+      "NumAwardedHardcore": 23,
+      "MostRecentAwardedDate": "2026-10-27T00:39:39+00:00",
+      "HighestAwardKind": "mastered",
+      "HighestAwardDate": "2026-10-27T00:39:39+00:00"
+    },
+    {
+      "GameID": 355,
+      "Title": "Super Mario World",
+      "ImageIcon": "/Images/066594.png",
+      "ConsoleID": 3,
+      "ConsoleName": "SNES/Super Famicom",
+      "MaxPossible": 96,
+      "NumAwarded": 10,
+      "NumAwardedHardcore": 0,
+      "MostRecentAwardedDate": "2026-01-02T03:04:05+00:00",
+      "HighestAwardKind": null,
+      "HighestAwardDate": null
+    }
+  ]
+}

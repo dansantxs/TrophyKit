@@ -1,0 +1,42 @@
+{
+  "TotalAwardsCount": 3,
+  "HiddenAwardsCount": 0,
+  "MasteryAwardsCount": 1,
+  "CompletionAwardsCount": 0,
+  "BeatenHardcoreAwardsCount": 1,
+  "BeatenSoftcoreAwardsCount": 0,
+  "EventAwardsCount": 1,
+  "SiteAwardsCount": 0,
+  "VisibleUserAwards": [
+    {
+      "AwardedAt": "2026-10-27T00:39:39+00:00",
+      "AwardType": "Mastery/Completion",
+      "AwardData": 1,
+      "AwardDataExtra": 1,
+      "DisplayOrder": 0,
+      "Title": "Sonic the Hedgehog",
+      "ConsoleID": 1,
+      "ConsoleName": "Genesis/Mega Drive",
+      "Flags": null,
+      "ImageIcon": "/Images/085573.png"
+    },
+    {
+      "AwardedAt": "2026-10-26T00:00:00+00:00",
+      "AwardType": "Game Beaten",
+      "AwardData": 1,
+      "AwardDataExtra": 1,
+      "Title": "Sonic the Hedgehog",
+      "ConsoleName": "Genesis/Mega Drive",
+      "ImageIcon": "/Images/085573.png"
+    },
+    {
+      "AwardedAt": "2025-12-25T00:00:00+00:00",
+      "AwardType": "Event",
+      "AwardData": 28000,
+      "AwardDataExtra": 0,
+      "Title": "Christmas 2025",
+      "ConsoleName": "Events",
+      "ImageIcon": "https://media.retroachievements.org/Images/event.png"
+    }
+  ]
+}
