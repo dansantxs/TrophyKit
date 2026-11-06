@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net10.0</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../../src/TrophyKit.PlayStation/TrophyKit.PlayStation.csproj" />
+    <ProjectReference Include="../../src/TrophyKit.Xbox/TrophyKit.Xbox.csproj" />
+    <ProjectReference Include="../../src/TrophyKit.RetroAchievements/TrophyKit.RetroAchievements.csproj" />
+  </ItemGroup>
+
+</Project>

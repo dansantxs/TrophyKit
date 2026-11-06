@@ -1,0 +1,39 @@
+name: release
+
+# Each package keeps its own <Version> in its .csproj. To release, bump the versions of the packages that
+# changed, update CHANGELOG.md, then push a tag such as v2026.11.0. Packages whose version already exists on
+# NuGet are skipped, so only the bumped ones are published.
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            10.0.x
+
+      - run: dotnet restore
+      - run: dotnet build --no-restore -c Release
+      - run: dotnet test tests/TrophyKit.Tests --no-build -c Release
+      - run: dotnet pack --no-build -c Release -o artifacts
+
+      - name: Push to NuGet
+        run: dotnet nuget push "artifacts/*.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json --skip-duplicate
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+
+      - name: GitHub release
+        run: gh release create "$GITHUB_REF_NAME" artifacts/*.nupkg --generate-notes --verify-tag
+        env:
+          GH_TOKEN: ${{ github.token }}
