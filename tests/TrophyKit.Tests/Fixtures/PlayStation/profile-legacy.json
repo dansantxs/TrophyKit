@@ -1,0 +1,16 @@
+{
+  "profile": {
+    "onlineId": "some_hunter",
+    "accountId": "1234567890123456789",
+    "npId": "c29tZV9odW50ZXJAYTYuYnI=",
+    "avatarUrls": [
+      { "size": "m", "avatarUrl": "https://psn-rsc.prod.dl.playstation.net/avatar_m.png" },
+      { "size": "l", "avatarUrl": "https://psn-rsc.prod.dl.playstation.net/avatar_l.png" }
+    ],
+    "plus": 1,
+    "aboutMe": "Platinum hunter",
+    "languagesUsed": ["pt"],
+    "trophySummary": { "level": 431, "progress": 72, "earnedTrophies": { "bronze": 3210, "silver": 820, "gold": 260, "platinum": 41 } },
+    "isOfficiallyVerified": false
+  }
+}

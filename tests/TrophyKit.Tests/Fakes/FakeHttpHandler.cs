@@ -38,6 +38,7 @@ public sealed class FakeHttpHandler : HttpMessageHandler
         return this;
     }
 
+    private readonly object _sync = new();
     private CancellationToken _hangToken;
 
     /// <summary>Answers every request whose URL contains <paramref name="urlPart"/>.</summary>
@@ -54,17 +55,27 @@ public sealed class FakeHttpHandler : HttpMessageHandler
     protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
     {
         var body = request.Content is null ? null : await request.Content.ReadAsStringAsync(cancellationToken);
-        Requests.Add(new RecordedRequest(
+        var recorded = new RecordedRequest(
             request.Method,
             request.RequestUri!,
             request.Headers.ToDictionary(h => h.Key, h => string.Join(",", h.Value), StringComparer.OrdinalIgnoreCase),
-            body));
+            body);
 
-        _hangToken = cancellationToken;
-        HttpResponseMessage response;
-        if (_queue.Count > 0)
+        Func<HttpRequestMessage, Task<HttpResponseMessage>>? queued = null;
+        lock (_sync)
         {
-            response = await _queue.Dequeue()(request);
+            Requests.Add(recorded);
+            _hangToken = cancellationToken;
+            if (_queue.Count > 0)
+            {
+                queued = _queue.Dequeue();
+            }
+        }
+
+        HttpResponseMessage response;
+        if (queued is not null)
+        {
+            response = await queued(request);
         }
         else
         {

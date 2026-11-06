@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0AB3BF05
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrophyKit.Tests", "tests\TrophyKit.Tests\TrophyKit.Tests.csproj", "{EC815806-351D-4592-A783-85469C74869A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrophyKit.PlayStation", "src\TrophyKit.PlayStation\TrophyKit.PlayStation.csproj", "{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,18 @@ Global
 		{EC815806-351D-4592-A783-85469C74869A}.Release|x64.Build.0 = Release|Any CPU
 		{EC815806-351D-4592-A783-85469C74869A}.Release|x86.ActiveCfg = Release|Any CPU
 		{EC815806-351D-4592-A783-85469C74869A}.Release|x86.Build.0 = Release|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Debug|x64.Build.0 = Debug|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Debug|x86.Build.0 = Debug|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Release|x64.ActiveCfg = Release|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Release|x64.Build.0 = Release|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Release|x86.ActiveCfg = Release|Any CPU
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,5 +66,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{CAAEF7C4-5FDC-4228-9677-67436267E554} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{EC815806-351D-4592-A783-85469C74869A} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{89EAA750-7C85-400A-8DCC-EF31C2EFBCC3} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 EndGlobal

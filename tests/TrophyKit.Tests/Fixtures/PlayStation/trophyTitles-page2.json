@@ -1,0 +1,19 @@
+{
+  "trophyTitles": [
+    {
+      "npServiceName": "trophy",
+      "npCommunicationId": "NPWR01234_00",
+      "trophySetVersion": "01.00",
+      "trophyTitleName": "Old PS3 Game",
+      "trophyTitlePlatform": "PS3,PSVITA",
+      "hasTrophyGroups": false,
+      "definedTrophies": { "bronze": 40, "silver": 8, "gold": 2, "platinum": 1 },
+      "progress": 5,
+      "earnedTrophies": { "bronze": 3, "silver": 0, "gold": 0, "platinum": 0 },
+      "hiddenFlag": true,
+      "lastUpdatedDateTime": "2014-05-01T10:00:00Z"
+    }
+  ],
+  "previousOffset": 1,
+  "totalItemCount": 3
+}

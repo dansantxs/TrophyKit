@@ -1,0 +1,35 @@
+{
+  "trophySetVersion": "01.10",
+  "hasTrophyGroups": true,
+  "trophies": [
+    {
+      "trophyId": 1,
+      "trophyHidden": false,
+      "trophyType": "gold",
+      "trophyName": "Collector",
+      "trophyDetail": "Collect 1000 coins",
+      "trophyIconUrl": "https://image.api.playstation.com/t/1.png",
+      "trophyGroupId": "default",
+      "trophyProgressTargetValue": "1000"
+    },
+    {
+      "trophyId": 0,
+      "trophyHidden": false,
+      "trophyType": "platinum",
+      "trophyName": "Master",
+      "trophyDetail": "Earn every trophy",
+      "trophyIconUrl": "https://image.api.playstation.com/t/0.png",
+      "trophyGroupId": "default"
+    },
+    {
+      "trophyId": 2,
+      "trophyHidden": true,
+      "trophyType": "bronze",
+      "trophyName": "Secret",
+      "trophyDetail": "???",
+      "trophyIconUrl": "https://image.api.playstation.com/t/2.png",
+      "trophyGroupId": "001"
+    }
+  ],
+  "totalItemCount": 3
+}

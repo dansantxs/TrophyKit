@@ -2,6 +2,7 @@
 
   <ItemGroup>
     <ProjectReference Include="../../src/TrophyKit.Core/TrophyKit.Core.csproj" />
+    <ProjectReference Include="../../src/TrophyKit.PlayStation/TrophyKit.PlayStation.csproj" />
   </ItemGroup>
 
   <ItemGroup>

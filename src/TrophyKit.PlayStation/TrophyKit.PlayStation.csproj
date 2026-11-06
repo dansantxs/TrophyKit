@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <RootNamespace>TrophyKit.PlayStation</RootNamespace>
+    <Description>Unofficial PlayStation Network trophy client for .NET: NPSSO authentication with automatic token refresh, profiles, trophy titles and trophies (PS3, PS4, PS5, Vita), with rate limiting and retries. Not affiliated with Sony Interactive Entertainment.</Description>
+    <PackageTags>$(PackageTags);psn;trophy;ps5;ps4</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../TrophyKit.Core/TrophyKit.Core.csproj" />
+  </ItemGroup>
+
+</Project>

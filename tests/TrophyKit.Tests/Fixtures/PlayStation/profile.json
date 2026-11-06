@@ -1,0 +1,12 @@
+{
+  "onlineId": "some_hunter",
+  "aboutMe": "",
+  "avatars": [
+    { "size": "s", "url": "https://psn-rsc.prod.dl.playstation.net/s.png" },
+    { "size": "xl", "url": "https://psn-rsc.prod.dl.playstation.net/xl.png" }
+  ],
+  "languages": ["pt-BR"],
+  "isPlus": false,
+  "isOfficiallyVerified": false,
+  "isMe": false
+}
