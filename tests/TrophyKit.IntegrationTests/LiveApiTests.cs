@@ -6,7 +6,8 @@ namespace TrophyKit.IntegrationTests;
 
 /// <summary>
 /// Contract tests against the real APIs. Each test is skipped unless its credentials are set:
-/// PSN_NPSSO; XBOX_CLIENT_ID + XBOX_REFRESH_TOKEN; RA_API_KEY + RA_USER.
+/// PSN_NPSSO (+ optional PSN_PUBLIC_ONLINE_ID: a public profile with trophies, read instead of the signed-in
+/// account); XBOX_CLIENT_ID + XBOX_REFRESH_TOKEN; RA_API_KEY + RA_USER.
 /// They check that the responses still have the shape the clients expect.
 /// </summary>
 public class LiveApiTests
@@ -31,17 +32,23 @@ public class LiveApiTests
         var lookup = await psn.GetProfileByOnlineIdAsync(me.OnlineId, Ct);
         Assert.Matches("^[0-9]+$", lookup.AccountId);
 
-        var summary = await psn.GetTrophySummaryAsync(cancellationToken: Ct);
+        // A service account usually has no games: read a public profile instead when one is given.
+        var publicOnlineId = Environment.GetEnvironmentVariable("PSN_PUBLIC_ONLINE_ID");
+        var accountId = string.IsNullOrWhiteSpace(publicOnlineId)
+            ? PsnClient.Me
+            : (await psn.GetProfileByOnlineIdAsync(publicOnlineId, Ct)).AccountId;
+
+        var summary = await psn.GetTrophySummaryAsync(accountId, Ct);
         Assert.InRange(summary.TrophyLevel, 1, 999);
 
-        var page = await psn.GetTrophyTitlesAsync(limit: 5, cancellationToken: Ct);
-        Assert.SkipWhen(page.Titles.Count == 0, "The account has no trophy titles.");
+        var page = await psn.GetTrophyTitlesAsync(accountId, limit: 5, cancellationToken: Ct);
+        Assert.SkipWhen(page.Titles.Count == 0, "The account has no trophy titles. Set PSN_PUBLIC_ONLINE_ID to a public profile with trophies.");
         var title = page.Titles[0];
         Assert.Matches("^NPWR[0-9]+_[0-9]+$", title.NpCommunicationId);
         Assert.NotEmpty(title.Platforms);
         Assert.NotNull(title.LastUpdatedAt);
 
-        var trophies = await psn.GetTitleTrophiesAsync(title, cancellationToken: Ct);
+        var trophies = await psn.GetTitleTrophiesAsync(title, accountId, Ct);
         Assert.Equal(title.DefinedTrophies.Total, trophies.Count);
         Assert.All(trophies, t => Assert.False(string.IsNullOrEmpty(t.IconUrl)));
         Assert.Equal(title.EarnedTrophies.Total, trophies.Count(t => t.IsEarned));

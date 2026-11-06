@@ -27,6 +27,7 @@ jobs:
         run: dotnet test tests/TrophyKit.IntegrationTests -c Release
         env:
           PSN_NPSSO: ${{ secrets.PSN_NPSSO }}
+          PSN_PUBLIC_ONLINE_ID: ${{ secrets.PSN_PUBLIC_ONLINE_ID }}
           XBOX_CLIENT_ID: ${{ secrets.XBOX_CLIENT_ID }}
           XBOX_CLIENT_SECRET: ${{ secrets.XBOX_CLIENT_SECRET }}
           XBOX_REFRESH_TOKEN: ${{ secrets.XBOX_REFRESH_TOKEN }}

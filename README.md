@@ -244,7 +244,7 @@ dotnet test tests/TrophyKit.Tests          # unit tests, no network
 ```
 
 The integration tests in `tests/TrophyKit.IntegrationTests` hit the real APIs. Each test is skipped unless its
-environment variables are set: `PSN_NPSSO`; `XBOX_CLIENT_ID` + `XBOX_REFRESH_TOKEN` (+ `XBOX_CLIENT_SECRET`);
+environment variables are set: `PSN_NPSSO` (+ optional `PSN_PUBLIC_ONLINE_ID`, a public profile with trophies to read when the signed-in account has none); `XBOX_CLIENT_ID` + `XBOX_REFRESH_TOKEN` (+ `XBOX_CLIENT_SECRET`);
 `RA_API_KEY` + `RA_USER`. The `contract` workflow runs them every day with the repository secrets, to catch API
 changes early.
 
