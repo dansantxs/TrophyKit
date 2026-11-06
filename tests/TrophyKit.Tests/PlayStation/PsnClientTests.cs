@@ -124,6 +124,23 @@ public class PsnClientTests
     }
 
     [Fact]
+    public async Task Profile_of_me_resolves_numeric_account_id_once()
+    {
+        var fake = Fake()
+            .Route("/trophy/v1/users/me/trophySummary", HttpStatusCode.OK, Fixtures.Read("PlayStation/trophySummary.json"))
+            .Route("/userProfile/v1/internal/users/1234567890123456789/profiles", HttpStatusCode.OK, Fixtures.Read("PlayStation/profile.json"));
+        using var psn = PsnFake.Client(fake);
+
+        var first = await psn.GetProfileAsync(PsnClient.Me, Ct);
+        var second = await psn.GetProfileAsync(cancellationToken: Ct);
+
+        Assert.Equal("1234567890123456789", first.AccountId);
+        Assert.Equal("some_hunter", second.OnlineId);
+        Assert.Single(fake.ApiRequests(), r => r.Uri.AbsolutePath.EndsWith("/trophySummary", StringComparison.Ordinal));
+        Assert.DoesNotContain(fake.ApiRequests(), r => r.Uri.AbsolutePath.Contains("/users/me/profiles", StringComparison.Ordinal));
+    }
+
+    [Fact]
     public async Task Unknown_user_throws_not_found_with_code()
     {
         var fake = Fake().Route("profile2", HttpStatusCode.NotFound, Fixtures.Read("PlayStation/error-not-found.json"));

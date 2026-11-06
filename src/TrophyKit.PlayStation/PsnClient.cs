@@ -31,6 +31,7 @@ public sealed class PsnClient : IDisposable
     private readonly HttpClient _http;
     private readonly PsnClientOptions _options;
     private readonly IDisposable[] _owned;
+    private (string? RefreshToken, string AccountId)? _me;
 
     /// <summary>
     /// Creates a client without dependency injection.
@@ -104,6 +105,12 @@ public sealed class PsnClient : IDisposable
     public async Task<PsnUserProfile> GetProfileAsync(string accountId = Me, CancellationToken cancellationToken = default)
     {
         ArgumentException.ThrowIfNullOrWhiteSpace(accountId);
+        if (accountId == Me)
+        {
+            // The profile endpoint needs the numeric id; it does not understand "me".
+            accountId = await GetMyAccountIdAsync(cancellationToken).ConfigureAwait(false);
+        }
+
         var url = PsnEndpoints.ApiBase + $"userProfile/v1/internal/users/{Uri.EscapeDataString(accountId)}/profiles";
         var p = await GetAsync<ProfileDto>(url, cancellationToken).ConfigureAwait(false);
         var avatar = p.Avatars?
@@ -111,6 +118,26 @@ public sealed class PsnClient : IDisposable
             .Select(a => a.Url)
             .FirstOrDefault(u => !string.IsNullOrEmpty(u));
         return new PsnUserProfile(accountId, p.OnlineId ?? throw Unexpected("onlineId"), NullIfEmpty(p.AboutMe), avatar, p.IsPlus, p.IsOfficiallyVerified);
+    }
+
+    /// <summary>
+    /// Returns the numeric account id of the signed-in account. The value is cached until the account's tokens change.
+    /// </summary>
+    public async Task<string> GetMyAccountIdAsync(CancellationToken cancellationToken = default)
+    {
+        if (_me is { } cached && cached.RefreshToken is not null && cached.RefreshToken == Tokens.Current?.RefreshToken)
+        {
+            return cached.AccountId;
+        }
+
+        var summary = await GetTrophySummaryAsync(Me, cancellationToken).ConfigureAwait(false);
+        if (string.IsNullOrEmpty(summary.AccountId) || summary.AccountId == Me)
+        {
+            throw Unexpected("accountId");
+        }
+
+        _me = (Tokens.Current?.RefreshToken, summary.AccountId);
+        return summary.AccountId;
     }
 
     /// <summary>Gets the trophy level and trophy totals of an account.</summary>
