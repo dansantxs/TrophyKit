@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Version>0.1.0</Version>
+    <RootNamespace>TrophyKit.Xbox</RootNamespace>
+    <Description>Unofficial Xbox Live achievements client for .NET: Microsoft account OAuth with XSTS token handling and automatic refresh, profiles, title history and achievements, with rate limiting and retries. Not affiliated with Microsoft.</Description>
+    <PackageTags>$(PackageTags);xbox-live;gamerscore</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../TrophyKit.Core/TrophyKit.Core.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -322,23 +322,4 @@ public sealed class PsnClient : IDisposable
 
     private static TrophyKitException Unexpected(string field)
         => new(PsnEndpoints.Platform, $"PlayStation response is missing '{field}'. The API may have changed.");
-
-    /// <summary>Lets two pipelines share a primary handler supplied by the caller without disposing it twice.</summary>
-    private sealed class NonDisposingHandler(HttpMessageHandler inner) : HttpMessageHandler
-    {
-        private readonly HttpMessageInvoker _invoker = new(inner, disposeHandler: false);
-
-        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-            => _invoker.SendAsync(request, cancellationToken);
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                _invoker.Dispose();
-            }
-
-            base.Dispose(disposing);
-        }
-    }
 }

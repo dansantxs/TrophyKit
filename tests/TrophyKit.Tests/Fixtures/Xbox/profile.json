@@ -1,0 +1,16 @@
+{
+  "profileUsers": [
+    {
+      "id": "2533274800000001",
+      "hostId": "2533274800000001",
+      "settings": [
+        { "id": "Gamertag", "value": "Some Hunter" },
+        { "id": "Gamerscore", "value": "123456" },
+        { "id": "GameDisplayPicRaw", "value": "https://images-eds-ssl.xboxlive.com/image?url=abc" },
+        { "id": "AccountTier", "value": "Gold" },
+        { "id": "XboxOneRep", "value": "GoodPlayer" }
+      ],
+      "isSponsoredUser": false
+    }
+  ]
+}

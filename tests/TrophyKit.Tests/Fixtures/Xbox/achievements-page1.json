@@ -1,0 +1,24 @@
+{
+  "achievements": [
+    {
+      "id": "1",
+      "serviceConfigId": "0000",
+      "name": "Welcome",
+      "titleAssociations": [ { "name": "Starfield", "id": 1915865634 } ],
+      "progressState": "Achieved",
+      "progression": { "requirements": [], "timeUnlocked": "2026-09-06T18:42:10.5370000Z" },
+      "mediaAssets": [ { "name": "icon1", "type": "Icon", "url": "https://images-eds.xboxlive.com/1.png" } ],
+      "platforms": ["Durango", "Scarlett"],
+      "isSecret": false,
+      "description": "Join Constellation",
+      "lockedDescription": "Join Constellation",
+      "productId": "x",
+      "achievementType": "Persistent",
+      "participationType": "Individual",
+      "rewards": [ { "name": null, "description": null, "value": "15", "type": "Gamerscore", "valueType": "Int" } ],
+      "isRevoked": false,
+      "rarity": { "currentCategory": "Common", "currentPercentage": 78.4 }
+    }
+  ],
+  "pagingInfo": { "continuationToken": "1", "totalRecords": 2 }
+}

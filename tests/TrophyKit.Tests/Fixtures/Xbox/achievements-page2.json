@@ -1,0 +1,17 @@
+{
+  "achievements": [
+    {
+      "id": "2",
+      "name": "Secret Ending",
+      "progressState": "NotStarted",
+      "progression": { "requirements": [], "timeUnlocked": "0001-01-01T00:00:00.0000000Z" },
+      "mediaAssets": [ { "name": "icon2", "type": "Icon", "url": "https://images-eds.xboxlive.com/2.png" } ],
+      "isSecret": true,
+      "description": "",
+      "lockedDescription": "Secret achievement",
+      "rewards": [ { "value": "100", "type": "Gamerscore", "valueType": "Int" } ],
+      "rarity": { "currentCategory": "Rare", "currentPercentage": 2.1 }
+    }
+  ],
+  "pagingInfo": { "continuationToken": null, "totalRecords": 2 }
+}

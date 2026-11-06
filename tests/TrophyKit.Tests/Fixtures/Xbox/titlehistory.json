@@ -1,0 +1,54 @@
+{
+  "xuid": "2533274800000001",
+  "titles": [
+    {
+      "titleId": "1794054154",
+      "pfn": "Microsoft.Halo",
+      "name": "Halo Infinite",
+      "type": "Game",
+      "devices": ["XboxSeries", "XboxOne", "PC"],
+      "displayImage": "https://store-images.s-microsoft.com/halo.png",
+      "mediaItemType": "Application",
+      "achievement": {
+        "currentAchievements": 119,
+        "totalAchievements": 119,
+        "currentGamerscore": 1600,
+        "totalGamerscore": 1600,
+        "progressPercentage": 100.0,
+        "sourceVersion": 2
+      },
+      "titleHistory": { "lastTimePlayed": "2026-10-30T20:00:00.000Z", "visible": true, "canHide": false }
+    },
+    {
+      "titleId": "1297287135",
+      "name": "Halo 3",
+      "type": "Game",
+      "devices": ["Xbox360"],
+      "displayImage": "https://store-images.s-microsoft.com/halo3.png",
+      "achievement": {
+        "currentAchievements": 30,
+        "totalAchievements": 99,
+        "currentGamerscore": 420,
+        "totalGamerscore": 1750,
+        "progressPercentage": 24.4,
+        "sourceVersion": 1
+      },
+      "titleHistory": { "lastTimePlayed": "2012-01-01T00:00:00.000Z", "visible": true, "canHide": true }
+    },
+    {
+      "titleId": "1915865634",
+      "name": "Starfield",
+      "type": "Game",
+      "devices": ["XboxSeries", "PC"],
+      "achievement": {
+        "currentAchievements": 12,
+        "totalAchievements": 50,
+        "currentGamerscore": 210,
+        "totalGamerscore": 1000,
+        "progressPercentage": 21.0,
+        "sourceVersion": 2
+      },
+      "titleHistory": { "lastTimePlayed": "2026-11-01T10:00:00.000Z", "visible": true, "canHide": false }
+    }
+  ]
+}
